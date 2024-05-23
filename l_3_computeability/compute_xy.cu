@@ -8,8 +8,7 @@ void printfGPUComputeXY()
         cudaDeviceProp cuda_device_prop;
         for (int gpu_index = 0; gpu_index < gpu_count; ++gpu_index) {
             cudaGetDeviceProperties(&cuda_device_prop, gpu_index);
-            printf("Your GPU Compute Ability is: %d.%d\n",
-                   cuda_device_prop.major, cuda_device_prop.minor);
+            printf("Your GPU Compute Ability is: %d.%d\n", cuda_device_prop.major, cuda_device_prop.minor);
         }
     }
 }

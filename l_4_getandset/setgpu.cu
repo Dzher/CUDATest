@@ -74,9 +74,9 @@ void memHostDeviceCpy()
     }
     else {
         printf("Fail to allocate memory!\n");
-        free(host_float_a);
-        free(host_float_b);
-        free(host_float_result);
+        delete[] host_float_a;
+        delete[] host_float_b;
+        delete[] host_float_result;
         exit(-1);
     }
 
@@ -99,9 +99,10 @@ void memHostDeviceCpy()
                host_float_result[i]);
     }
 
-    free(host_float_a);
-    free(host_float_b);
-    free(host_float_result);
+    delete[] host_float_a;
+    delete[] host_float_b;
+    delete[] host_float_result;
+
     cudaFree(device_float_a);
     cudaFree(device_float_b);
     cudaFree(device_float_result);
